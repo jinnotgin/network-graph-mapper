@@ -238,7 +238,9 @@ export const getConnectorsAcrossNodePositions = (
       console.log("line collision detected between", nodeA, nodeB);
       output.type = "curve";
       output.cx = (output.x2 + output.x1) / 2;
-      output.cy = output.y1 * 1.25;
+      output.cy =
+        (output.y1 === output.y2 ? output.y1 : (output.y2 + output.y1) / 2) *
+        1.25;
     } else {
       output.type = "straight";
     }
